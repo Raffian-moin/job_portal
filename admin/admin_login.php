@@ -29,11 +29,16 @@ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/
 <link href="css/login_style.css" rel="stylesheet">
 <link href="css/sigin.css" rel="stylesheet">
 
+<style>
+.error{
+  color:red;
+}
+</style>
 
   </head>
 
   <body class="text-center">
-    <form class="form-signin" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    <form id="basic-form" class="form-signin" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <div class="form-group">
           <label for="inputEmail" class="sr-only">Email address</label>
@@ -82,6 +87,7 @@ if($result){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="js/admin_login.js"></script>
-  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="js/login-validation.js"></script>
+</body>
 </html>
