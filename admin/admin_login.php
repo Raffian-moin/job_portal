@@ -1,3 +1,12 @@
+<?php session_start(); 
+
+if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
+  header('location:admin_dashboard.php');
+}else{
+  // header('location:admin_login.php');
+}
+
+?>
 <?php include 'connection/db.php';?>
 <html lang="en">
   <head>
@@ -49,11 +58,17 @@ $email=$_POST['email'];
 $password=$_POST['password'];
 if(!empty($email && $password)){
 $result=mysqli_query($con, "SELECT * FROM admin_login where email='$email' AND password='$password' ");
-if(mysqli_num_rows($result)>0){
-  header("Location: admin_dashboard.php");
+if($result){
+  if(mysqli_num_rows($result)>0){
+    $_SESSION['email']=$email;
+    header("Location: admin_dashboard.php");
+  }else{
+    echo "try again";
+  }
 }else{
-  echo "try again";
+  header("Location: admin_login.php");
 }
+
 }
 }
 
