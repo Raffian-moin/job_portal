@@ -31,6 +31,7 @@ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/
 
 <style>
 .error{
+  font-size: 12px;
   color:red;
 }
 </style>
