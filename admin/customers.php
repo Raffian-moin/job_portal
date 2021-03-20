@@ -62,7 +62,7 @@ if($_SESSION['email']==true){
                 <td><?php echo $r['username']?></td>
                 <td><?php echo $r['email']?></td>
                 <td><?php echo $r['admin_role']?></td>
-                <td><a href="admin_edit.php" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                <td><a href="admin_edit_page.php?id=<?php echo $r['id']?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
                 <button class="btn btn-danger delete" id="<?php echo $r['id'] ?>" > <i class="fas fa-trash"></i></button>
                 </td>
 
