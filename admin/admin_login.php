@@ -63,11 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $email=$_POST['email'];
 $password=$_POST['password'];
 if(!empty($email && $password)){
-$result=mysqli_query($con, "SELECT * FROM admin_login where email='$email' AND password='$password' ");
+$result=mysqli_query($con, "SELECT * FROM admin_login where email='$email'");
 if($result){
-  if(mysqli_num_rows($result)>0){
+  if(mysqli_num_rows($result)==1){
+    $r=mysqli_fetch_array($result,MYSQLI_ASSOC);
+    if(password_verify($password,$r['password'])){
     $_SESSION['email']=$email;
     header("Location: admin_dashboard.php");
+    }
+    
   }else{
     echo "try again";
   }
